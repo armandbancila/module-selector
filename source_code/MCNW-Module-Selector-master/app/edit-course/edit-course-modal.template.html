@@ -1,0 +1,41 @@
+<div style="height:520px !important;" class="modal-content" id="edit">
+    <i class="glyphicon glyphicon-remove" id="windowCloseButtons" ng-click="close()"></i>
+    <div class="modal-header">
+   
+    <center>
+            <h4>Edit Course</h4>
+    </center>
+</div>
+<div class="modal-body">
+    <center style="padding-top:50px;">
+    <span id="edit_course_span">
+    <form class="edit-module-form">
+        <div class="input-group m">
+            <span class="input-group-addon">
+            <i class="fa fa-user"></i></span>
+        <input id="course_name" class="input" type="text" placeholder="Course Name" value="{{coursename}}" disabled/>
+        </div>
+         <div class="input-group m">
+               <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+               <select id="course_year" data-ng-options="y.name for y in yearOptions" data-ng-model="yearSelectedOption" class="input select_input">
+               </select>
+            </div>
+        <div class="input-group m">
+            <span class="input-group-addon"><i class="fa fa-plus" ></i></span> 
+            <select id="selector" ng-model="selectedItem" ng-change="moveModules()" class="input select_input">
+                <option value="" selected id="day_label">Add Modules To Course</option>
+                <option ng-repeat="module in unselectedModules track by module.ModuleID"> {{module.ModuleID}} </option>
+            </select>
+        </div>
+        <div id="module_bed" class="module-bed">
+            <span style="margin:5px 5px 5px 5px;" ng-click=addModuleOpen($event) ng-repeat="module in selectedModules | filter:{deleted:'!1'} track by $index" class="module-style-tag">{{module.ModuleID}} <i ng-click="deselectModule($event); $event.stopPropagation()" class="glyphicon glyphicon-remove" ng-attr-id="{{module + 'remove'}}"></i></span>
+        </div>        
+        <span id="edit_course_alert"></span>
+        <center>
+              <button ng-click="updateCourse()" class="btn submit_req_btn" id="edit_module_btn" type="submit">Update Course</button>
+                </center>
+            </form>
+        </span>
+        </center>
+    </div>
+</div>

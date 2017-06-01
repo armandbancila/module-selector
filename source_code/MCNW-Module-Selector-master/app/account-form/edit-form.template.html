@@ -1,0 +1,51 @@
+<div class="row">
+   <div class="BAC title underline">Edit Profile</div>
+</div>
+<center>
+   <span id="edit_profile_span">
+      <form class="edit-account-form" style="padding-top:7%">
+         <span id="edit-names-span">
+            <p class="link-text" style="font-size:1.3em; cursor:pointer" id="cn">Edit Name<i style="font-size:0.7em" id="names-icon" class="glyphicon glyphicon-minus"></i></p>
+         </span>
+         <div id="separator1">
+            <div class="input-group m">
+               <span class="input-group-addon"><i class="fa fa-user"></i></span>
+               <input class="input" id="f_name_input" type="text"/>
+            </div>
+            <div class="input-group m">
+               <span class="input-group-addon"><i class="fa fa-user"></i></span>
+               <input class="input" id="l_name_input" type="text" />
+            </div>
+            <div class="input-group m">
+               <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+               <input class="input" id="email_input" type="email" />
+            </div>
+            <button class="btn submit_req_btn" id="save_prof_btn" style="margin-bottom:45px;">Save Changes</button> 
+            <span id="update_name_alert">
+         </div>
+         </span>
+         <span id="update-pwd-span">
+            <p class="link-text" style="font-size:1.3em; cursor:pointer" id="cp">Update Password<i style="font-size:0.7em" id="pass-icon" class="glyphicon glyphicon-plus"></i> </p>
+         </span>
+         <div id="separator2">
+            <div class="input-group m"> 
+               <span class="input-group-addon"><i class="fa fa-key" ></i></span><input type="password" class="input" id="old-pwd-field" placeholder="Enter Your Old Password"/>
+            </div>
+            <div class="input-group m">
+               <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+               <input class="input" id="pwd_input" type="password" placeholder="New Password" />
+            </div>
+            <div class="input-group m">
+               <span class="input-group-addon"><i class="fa fa-check"></i></span>
+               <input class="input" id="pwd_confirm_input" type="password" placeholder="Confirm New Password" />
+            </div>
+            <center>
+               <button class="btn submit_req_btn" type="submit" id="pass_btn">
+               Update Password
+               </button>
+               <span id="update_password_alert"></span>
+            </center>
+         </div>
+   </span>
+   </form>
+</center>

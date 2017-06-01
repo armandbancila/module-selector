@@ -1,0 +1,73 @@
+<div class="modal-content" id="edit">
+   <i class="glyphicon glyphicon-remove" id="windowCloseButtons" ng-click="close()"></i>
+   <div class="modal-header">
+      <center>
+         <h4 class="h4">Edit Module</h4>
+      </center>
+   </div>
+   <div class="modal-body">
+      <center>
+         <form class="edit-module-form">
+            <div class="input-group m">
+               <span class="input-group-addon"><i class="fa fa-qrcode"></i></span>
+               <input id="module_code" class="input" type="text" placeholder="Module Code" value="{{id}}" disabled/>
+            </div>
+            <div class="input-group m">
+               <span class="input-group-addon"><i class="fa fa-user"></i></span>
+               <input id="module_name" class="input" type="text" placeholder="Module Name" value="{{name}}"/>
+            </div>
+            <div>
+               <div class="input-group-txtbox">
+                  <span class="input-group-addon-txtbox"><i class="fa fa-pencil" ></i></span>
+                  <label id="desc_label">Description</label>
+               </div>
+               <textarea id="description_box"> {{descr}}</textarea>
+            </div>
+            <div class="input-group m">
+               <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+               <select id="select_year" data-ng-options="y.name for y in yearOptions" data-ng-model="yearSelectedOption" class="input select_input">
+               </select>
+            </div>
+            <div class="input-group m">
+               <span class="input-group-addon"><i class="fa fa-graduation-cap" ></i></span>
+               <select id="select_credits" data-ng-options="c.name for c in creditOptions" data-ng-model="creditSelectedOption" class="input select_input" >
+               </select>
+            </div>
+            <div class="input-group m">
+               <span class="input-group-addon"><i class="fa fa-sun-o" ></i></span>
+               <select id="select_day" data-ng-options="d.name for d in dayOptions" data-ng-model="daySelectedOption" class="input select_input">
+               </select>
+            </div>
+            <div class="input-group m">
+               <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+               <input id="input_time" class="input" type="text" value="{{lectureTime}}"  maxlength="8" placeholder="Lecture Time (HH:MM:SS)" />
+            </div>
+            <div class="input-group m">
+               <span class="input-group-addon"><i class="fa fa-file-text-o"></i></span>
+               <input id="cw_perc_input" class="input" type="text" value="{{cw}}" maxlength="3" placeholder="Coursework Percentage" />
+            </div>
+            <div class="input-group m">
+               <span class="input-group-addon">
+               <i class="fa fa-sitemap"></i>
+               </span>
+               <select id="select_faculty" class="input select_input" data-ng-options="f.name for f in facultyOptions" data-ng-model="facultySelectedOption">
+               </select>
+            </div>
+            <div class="input-group m">
+               <span class="input-group-addon"><i class="fa fa-tag" ></i></span>
+               <select id="tag_selector" ng-model="selectedItem" ng-change="moveTags()" class="input select_input">
+                  <option value="" selected id="day_label">Add Tags To Module</option>
+                  <option ng-repeat="tagName in tagNames track by $index"> {{tagName}} </option>
+               </select>
+            </div>
+            <p id="tag_bed">
+            </p>
+             <span id="error_reporter"> </span>
+            <center>
+               <button ng-click="updateModule()"class="btn submit_req_btn" id="edit_module_btn" type="submit">Save Changes</button>
+            </center>
+         </form>
+      <button style="display:none;width:35% !important" ng-click="refresh()"class="btn submit_req_btn" id="refresh_modules_btn" type="submit">Close</button>
+      </center>
+   </div>
+</div>

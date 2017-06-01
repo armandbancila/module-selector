@@ -1,0 +1,257 @@
+body {
+  background-color: #444444;
+}
+
+.module-box-animations:hover {
+  background-color: #606060;
+}
+
+.faculty-animations:hover {
+  background-color: #606060;
+}
+
+.navbar .navbar-nav > li.open > a {
+  background-color: #848484;
+}
+
+.module-style-tag {
+  border-color: #848484;
+}
+
+.module-style-tag:hover {
+  background-color: #606060;
+}
+
+#modal_descr_text {
+  background-color: #444444;
+}
+
+.affix#searchBar {
+  background-color: #444444;
+}
+
+.seperator {
+  border-right-color: #848484;
+}
+
+.view {
+  background-color: #444444;
+}
+
+.details {
+  color: #848484;
+}
+
+.content {
+  color: #848484;
+}
+
+.underline {
+  border-bottom-color: #848484;
+}
+
+.filterStyle {
+  color: #848484;
+}
+
+#searchBar {
+  border-bottom-color: #848484;
+}
+
+#searchBar2 {
+  border-bottom-color: #848484;
+}
+
+.inSearch,
+.inSearch:hover,
+.inSearch:focus,
+.inSearch:active,
+.inSearch:active:focus {
+  background-color: transparent;
+}
+
+.btn-show-more {
+  color: #848484;
+}
+
+.dropStyle {
+  background-color: #848484;
+}
+
+.moduleRow {
+  border: 1px solid #848484;
+}
+
+.moduleMain {
+  border-right: 1px dashed #848484;
+}
+
+.row.moduleDesc {
+  color: #848484;
+}
+
+.sideBarRecommended {
+  color: #848484;
+}
+
+.moduleBox {
+  border: 1px solid #848484;
+}
+
+.tracked {
+  border: 1px solid #848484;
+}
+
+.glyphicon.glyphicon-pushpin:hover {
+  color: #848484;
+}
+
+.moduleBox.right {
+  border: 1px solid #848484;
+}
+
+.moduleBox.left {
+  border: 1px solid #848484;
+}
+
+.btn-outline-info {
+  border-color: #848484;
+}
+
+.btn-outline-info:hover {
+  background-color: #848484;
+}
+
+.btn-outline-info:active {
+  background-color: #848484;
+}
+
+.dropdown-item {
+  color: #444444;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #848484 !important;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #848484 !important;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #848484 !important;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #848484 !important;
+}
+/* the block that includes all elements on the page*/
+
+form {
+  color: #848484;
+}
+
+.m {
+  border-bottom: 0.09em solid #848484;
+}
+
+.submit_req_btn {
+  border: 2.478px solid #848484;
+}
+
+.submit_req_btn:hover {
+  background-color: #848484;
+  color: #444444;
+}
+
+.select_input {
+  background-color: #444444;
+}
+
+#description_box {
+  background-color: #444444;
+  border: 1px solid #848484;
+}
+
+#description_box2 {
+  background-color: #444444;
+  border: 1px solid #848484;
+}
+
+.navbar {
+  background-color: #444444;
+}
+
+ul.nav a:hover {
+  color: #848484 !important;
+}
+
+.label {
+  color: #444444;
+  background-color: #848484;
+}
+
+.cute_tile {
+  border: 1px solid #848484;
+}
+
+#edit {
+  background-color: #444444;
+}
+
+#help-upload {
+  border-color: #848484;
+}
+
+#example-upload {
+  color: #444444;
+  border-color: #848484;
+}
+
+.create_req_btn {
+  border: 2.478px solid #848484;
+}
+
+.create_req_btn:hover {
+  background-color: #848484;
+  color: #444444;
+}
+
+.kings_link {
+  color: #848484;
+}
+
+.upload-component {
+  background-color: #444444;
+  border-color: #848484;
+}
+
+.browse-component {
+  background-color: #444444;
+  border-color: #848484;
+}
+
+.color-option {
+  border-color: #848484;
+}
+
+.departmentButton {
+  border: 1px solid #848484;
+}
+
+#degree-block {
+  background-color: #606060;
+  border: 1.5px solid #848484;
+}
+
+.glyphicon-star {
+  color: #444444;
+}
+
+#title {
+  color: #848484;
+}

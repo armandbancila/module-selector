@@ -1,0 +1,46 @@
+<div class="modal-content" id="edit">
+   <i class="glyphicon glyphicon-remove" id="windowCloseButtons" ng-click="close()"></i>
+   <div class="modal-header">
+      <center>
+         <h4 style="color: white">Add Module to Course</h4>
+      </center>
+   </div>
+   <div class="modal-body">
+      <center>
+         <form id="create-course-form">
+            <div class="input-group m">
+               <span class="input-group-addon"><i class="fa fa-qrcode"></i></span>
+               <span style=" float: left; padding-top: 5px;" class="normal-text">{{moduleCode}}</span>
+            </div>
+            <div class="input-group m">
+               <span class="input-group-addon"><i class="fa fa-question-circle-o"></i></span>
+               <select id="type-select" class="input select_input">
+                  <option selected id="option_label">{{selectedOptionality == "0" ? "Compulsory" : "Optional"}}</option>
+                  <option>{{selectedOptionality == "0" ? "Optional" : "Compulsory"}}</option>
+               </select>
+            </div>
+            <div class="input-group m">
+               <span class="input-group-addon">
+               <i class="fa fa-plus"></i>
+               </span>
+               <select id="dependency-selector" ng-model="selectedDependency" ng-change="moveDependency()" class="input select_input" ng-options="module.ModuleID for module in modules | filter:myFilter">
+                  <option value="" disabled>Dependant Modules</option>
+               </select>
+            </div>
+            <div id="module-bed-popup" class="module-bed"> <span ng-repeat="moduleID in selectedDependencies" class="label label-default">{{moduleID}}<i ng-click="deselectDependency($event); $event.stopPropagation()" class="glyphicon glyphicon-remove" id=" 1 "></i></span> </div>
+            <div class="input-group m">
+               <span class="input-group-addon">
+               <i class="fa fa-plus"></i>
+               </span>
+               <select id="recommendation-selector" ng-model="selectedRecommendation" ng-change="moveRecommendation()" class="input select_input" ng-options="module.ModuleID for module in modules | filter:myFilter">
+                  <option value="" disabled>Recommended Modules</option>
+               </select>
+            </div>
+            <div id="module-bed-popup" class="module-bed"> <span ng-repeat="moduleID in selectedRecommendations" class="label label-default">{{moduleID}}<i ng-click="deselectRecommendation($event); $event.stopPropagation()" class="glyphicon glyphicon-remove" id=" 1 "></i></span> </div>
+            <center>
+               <button class="btn submit_req_btn" id="add_module_to_course_btn" type="submit" ng-click="save()">Save Module</button>
+            </center>
+         </form>
+      </center>
+   </div>
+</div>

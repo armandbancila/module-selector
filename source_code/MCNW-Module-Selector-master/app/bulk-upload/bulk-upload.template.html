@@ -1,0 +1,43 @@
+<div class="row">
+   <div class="BAC title underline">Bulk Upload</div>
+</div>
+<center>
+   <div class="input-group m" id="dataDiv">
+      <select id="select_data" class="input select_input" data-ng-options="u.name for u in dataOptions" ng-model="dataOptions[0]"></select>
+   </div>
+   <div id="help-upload">
+      <p> Please upload a CSV file containing the data to be inserted</p>
+      <p id="init_instructions"></p>
+      <span id="hint">Click the question mark below to see an example of what the file 
+      <br/> should contain. 
+      </span>
+   </div>
+   <div id="expand-examples">
+      <i id="example-icon" style="color:white; font-size:2.2em; cursor:pointer" class="glyphicon glyphicon-question-sign" ng-click="showExample()"></i>
+      <div id="example-upload" >
+         <center>
+            <h5> Example entries:</h5>
+         </center>
+         <p id="example-entries"></p>
+         <center>
+            <h5>...</h5>
+         </center>
+         <hr/>
+         <p><i class="glyphicon glyphicon-warning-sign" style="font-size:1.2em;padding-right:5px;color:red"></i> Use only typewriter commas ("example") to enclose rich strings(strings that contain commas, new lines, etc.).  </p>
+         <p><i class="glyphicon glyphicon-warning-sign" style="font-size:1.2em;padding-right:5px;color:red"></i> Do not leave any spaces between commas unless you wish to insert spaces into the database.  </p>
+         <p style="font-size:1em" id="warning_p"></p>
+      </div>
+   </div>
+   <span>
+      <label id="browseBtn" class="btn btn-outline-info resizableText">
+      <i style="margin-right:10px" class="glyphicon glyphicon-folder-open"></i> Browse <input id="input-module-file" name="batch" ng-files="getFile($file)" type="file" style="display: none;">
+      </label>
+      <h6 id="fileName" class="resizableText" style="color:white;display:inline !important">
+         No File Selected  
+      </h6>
+      <label id="uploadBtn" ng-click="uploadFile()" class="btn btn-outline-info resizableText">
+      <i  id="file-icon" style="margin-right:5px" class="glyphicon glyphicon-file"></i>Upload
+      </label>
+   </span>
+   <span id="bulk_alert" style="width:auto"></span>
+</center>

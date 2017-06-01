@@ -1,0 +1,41 @@
+<div class="row"><div class="BAC title underline">Edit Module</div></div>
+<br><br>
+<center>
+   <div id="edit_module_content">
+      <div id="searchBar2" class="input-group">
+         <span class="input-group-btn">
+         <button class="btn btn-default glyphicon glyphicon-search inSearch" type="button"></button>
+         </span>
+         <input type="text" class="form-control inSearch" placeholder="Search For A Module" ng-model="$ctrl.query.Name">
+      </div>
+      <div id="edit_module_bed">
+         <div class="cute_tile module-box-animations" ng-click="open(module.ModuleID, module.Name, module.Description, module.CourseworkPercentage, module.Credits, module.LectureTime, module.LectureDay, module.Year, module.Faculty)" ng-repeat="module in modules | filter:$ctrl.query.Name:Name | limitTo: paginationLimit() ">
+            <table style="width:100%">
+               <tr class="row">
+                  <span>
+                  <td>
+                     <h4 id="module_title"> {{module.ModuleID}} 
+                        <!--   <i id="glyph_pencil" class="glyphicon glyphicon-pencil"></i>  -->
+                     </h4>
+                  </td>
+                  <td>
+                     <i ng-click="remove(module.ModuleID); $event.stopPropagation()" class="glyphicon glyphicon-trash"></i>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td>
+                     <p id="mod_name_label"> {{module.Name}} </p>
+                  </td>
+               </tr>
+               <tr class="row">
+                  <td>
+                     <p class="details" style="padding-left:10px"> {{module.Credits + ' Credits |'}}  {{getExam(module.CourseworkPercentage) + '% Exam | '}} {{module.CourseworkPercentage + '% Coursework'}} </p>
+                  </td>
+                  <td></td>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <button class="btn-show-more" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">Show More Modules</button>
+   </div>
+</center>

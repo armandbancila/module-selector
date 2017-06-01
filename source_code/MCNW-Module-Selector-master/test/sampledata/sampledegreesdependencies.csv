@@ -1,0 +1,4 @@
+DegreeID,Dependency,Parent
+"BSc Computer Science","4CCS2DBS","5CCS1INS"
+"MSci Computer Science","6CCS1MAL","4CCS1FC1"
+"BSc Computer Science with Management","4SSMN110","5SSMN210"

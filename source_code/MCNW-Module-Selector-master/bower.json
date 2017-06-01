@@ -1,0 +1,21 @@
+{
+    "name": "module-selector",
+    "description": "Project run assignment produced by Make Code Not War",
+    "version": "0.0.0",
+    "homepage": "https://github.kcl.ac.uk/k1502739/MCNW-Module-Selector.git",
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+        "angular": "1.5.x",
+        "angular-mocks": "1.5.x",
+        "angular-route": "1.5.x",
+        "angular-cookies": "1.5.x",
+        "angular-animate": "1.5.x",
+        "a0-angular-storage": "*",
+        "bootstrap": "3.3.x",
+        "jasny-bootstrap": "3.1.x",
+        "jquery": "2.2.x",
+        "angular-ui-bootstrap": "x",
+        "angular-bootstrap": "x"
+    }
+}

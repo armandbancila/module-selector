@@ -1,0 +1,27 @@
+<div id="recommendedResults" class="row contentWhite underline">
+   Recommendations
+</div>
+<div class="row">
+    <div class="noResults" ng-if="$ctrl.emptyRecommendations">No Recommendations</div>
+    <div class="col-xs-4 moduleBox module-box-animations" ng-repeat="module in $ctrl.rModules" ng-click="open(module.ModuleID, module.Name, module.Description, module.CourseworkPercentage, module.Credits)">
+        <div class="row moduleHeader">
+            <div class="col-xs-9 moduleTitle resizableTitle">{{module.ModuleID}}</div>
+            <div class="col-xs-3">
+                <span ng-if="$ctrl.isNotTracked(module.ModuleID)" ng-click="$ctrl.tracked(module.ModuleID); $event.stopPropagation()" ng-attr-class="{{module.ModuleID + 'tracked'}} glyphicon glyphicon-pushpin white"></span>
+                <span ng-if="$ctrl.isTracked(module.ModuleID)" ng-click="$ctrl.tracked(module.ModuleID); $event.stopPropagation()" ng-attr-class="{{module.ModuleID + 'tracked'}} glyphicon glyphicon-pushpin red"></span>
+            </div>
+        </div>
+        <div class="moduleSub">
+            <p class="resizableTitle">{{module.Name}} </p>
+        </div>
+        <div class="rModules">
+            <p class="resizableText2">{{module.Credits}} Credits </p>
+        </div>
+        <div class="rModules">
+            <p class="resizableText2">{{100-module.CourseworkPercentage > 0 ? 100-module.CourseworkPercentage + '% Exam': ''}} </p>
+        </div>
+        <div class="rModules">
+            <p class="resizableText2">{{module.CourseworkPercentage > 0 ? module.CourseworkPercentage+ '% Coursework' : '' }} </p>
+        </div>
+    </div>
+</div>

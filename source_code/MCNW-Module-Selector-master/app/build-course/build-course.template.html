@@ -1,0 +1,89 @@
+<div class="row">
+   <div class="BAC title underline">Build A Course</div>
+</div>
+<div class="row">
+<div id="builderContainer">
+   <div class="row selectBuild">
+      <div class="col-xs-10">
+         <select class="select-degree">
+            <option></option>
+         </select>
+          <div  style="padding-right: 0; display:inline">
+         <button class="btn btn-outline-info resizableTitle" id="buildBtn" ng-click="$ctrl.buildMe()"><center>Build</center></button>
+						<span class="key" style="margin-left: 1%;">Module Colour Key : <span id="Compulsory">Compulsory</span> <span id="DEPENDENT">Dependent</span> <span id="DEPENDENCY">Dependency</span> <span id="Normal">Normal Option</span></span>
+      </div>
+      </div>
+   </div>
+   <div class="row builder buildRow" id="degree-block" ng-repeat="course in $ctrl.courses">
+      <div class="col">
+         <span class="buildTitle" ng-bind="course.template"></span>
+         <i id="remove_build" ng-click="$ctrl.remove(course.buildID)" class="glyphicon glyphicon-trash"></i>
+         <div class="row">
+            <div class="col-xs-12">
+               <div ng-attr-class="col-xs-1 year {{'year-from'+ course.years.length}}" ng-repeat="year in course.years">
+                  <div class="row">
+                     <p class="resizableText"><span class="left" ng-bind="'Year '+ ($index+1)"></span> </p>
+                     <p class="resizableText"><span class="right red" ng-if="$ctrl.exceeded(course['yearCredits'][$index])" ng-bind="course['yearCredits'][$index]"></span><span class="right" ng-if="!$ctrl.exceeded(course['yearCredits'][$index])" ng-bind="course['yearCredits'][$index]"></span></p>
+                  </div>
+                  <div class="row module-option" ng-attr-id="{{module.Evaluated}}" ng-repeat="module in year | orderBy: module.Evaluated : true">
+                     <div class="col-xs-12 buildModule" ng-click="open(module.ModuleID)">
+                        <div class="row build-component-line">
+                           <div class="col-xs-12 buildCol">
+                              <i ng-if="module.Evaluated!='Compulsory'" id="remove_component" ng-click="$ctrl.removeComponent(course, module.ModuleID); $event.stopPropagation()" class="glyphicon glyphicon-remove"></i>
+                           </div>
+                        </div>
+                        <div class="row build-component-line">
+                           <div class="col-xs-12">
+                             <p class="resizableText"> <span ng-bind="module.ModuleID"></span> </p>
+                           </div>
+                        </div>
+                        <div class="row build-component-line">
+                           <div class="col-xs-12 buildCol">
+                              <p class="resizableText"> <span class="right" id='credit-indicator' ng-bind="module.Credits + ' credits'"></span> </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <i ng-if="$ctrl.hasOptions(course, $index+1) && !$ctrl.isOpen(course, $index)" id="show_options" ng-click="$ctrl.showOptions(course, $index+1)" class="glyphicon glyphicon-chevron-down"></i>
+                     <i ng-if="$ctrl.hasOptions(course, $index+1) && $ctrl.isOpen(course, $index)" id="show_options" ng-click="$ctrl.showOptions(course, $index+1)" class="glyphicon glyphicon-chevron-up"></i>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row" style="overflow: auto;padding:15px;">
+            <div ng-attr-class="col-xs-1 year grow {{'year-from'+ course.years.length}} options" ng-attr-id="{{'grow-'+course.buildID+'-'+($index+1)}}" ng-repeat="optionYear in course.options">
+               <div class="row module-option" id="Normal" ng-if="$ctrl.notChosen(course, module.ModuleID)" ng-repeat="module in optionYear">
+                  <div class="col-xs-12 buildModule" ng-click="open(module.ModuleID)">
+                     <div class="row build-component-line">
+                        <div class="col-xs-12 buildCol">
+                           <i id="add_component" ng-click="$ctrl.addComponent(course, module.ModuleID); $event.stopPropagation()" class="glyphicon glyphicon-plus"></i>
+                           <i id="recommended" data-toggle="tooltip" data-placement="right" title="<span>Recommended Due To Your Selection Of {{$ctrl.dueTo[course.buildID][module.ModuleID]}}</span>"
+															ng-if="$ctrl.isRecommended(course, module.ModuleID)" class="glyphicon glyphicon-certificate">
+														<script>
+															$(document).ready(function(){
+																$('[data-toggle="tooltip"]').tooltip({html:true});   
+															});
+														 </script>
+                           </i>
+                        </div>
+                     </div>
+                     <div class="row build-component-line">
+                        <div class="col-xs-12">
+                           <p class="resizableText"><span ng-bind="module.ModuleID"></span> </p>
+                        </div>
+                     </div>
+                     <div class="row build-component-line">
+                        <div class="col-xs-12 buildCol">
+                          <p class="resizableText"> <span class="right" id='credit-indicator' ng-bind="module.Credits + ' credits'"></span> </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div>
+         </div>
+      </div>
+   </div>
+</div>

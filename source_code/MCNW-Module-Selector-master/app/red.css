@@ -1,0 +1,257 @@
+body {
+  background-color: #7B1612;
+}
+
+.module-box-animations:hover {
+  background-color: #66181C;
+}
+
+.faculty-animations:hover {
+  background-color: #66181C;
+}
+
+.navbar .navbar-nav > li.open > a {
+  background-color: #D86F6F;
+}
+
+.module-style-tag {
+  border-color: #D86F6F;
+}
+
+.module-style-tag:hover {
+  background-color: #66181C;
+}
+
+#modal_descr_text {
+  background-color: #7B1612;
+}
+
+.affix#searchBar {
+  background-color: #7B1612;
+}
+
+.seperator {
+  border-right-color: #D86F6F;
+}
+
+.view {
+  background-color: #7B1612;
+}
+
+.details {
+  color: #D86F6F;
+}
+
+.content {
+  color: #D86F6F;
+}
+
+.underline {
+  border-bottom-color: #D86F6F;
+}
+
+.filterStyle {
+  color: #D86F6F;
+}
+
+#searchBar {
+  border-bottom-color: #D86F6F;
+}
+
+#searchBar2 {
+  border-bottom-color: #D86F6F;
+}
+
+.inSearch,
+.inSearch:hover,
+.inSearch:focus,
+.inSearch:active,
+.inSearch:active:focus {
+  background-color: transparent;
+}
+
+.btn-show-more {
+  color: #D86F6F;
+}
+
+.dropStyle {
+  background-color: #D86F6F;
+}
+
+.moduleRow {
+  border: 1px solid #D86F6F;
+}
+
+.moduleMain {
+  border-right: 1px dashed #D86F6F;
+}
+
+.row.moduleDesc {
+  color: #D86F6F;
+}
+
+.sideBarRecommended {
+  color: #D86F6F;
+}
+
+.moduleBox {
+  border: 1px solid #D86F6F;
+}
+
+.tracked {
+  border: 1px solid #D86F6F;
+}
+
+.glyphicon.glyphicon-pushpin:hover {
+  color: #D86F6F;
+}
+
+.moduleBox.right {
+  border: 1px solid #D86F6F;
+}
+
+.moduleBox.left {
+  border: 1px solid #D86F6F;
+}
+
+.btn-outline-info {
+  border-color: #D86F6F;
+}
+
+.btn-outline-info:hover {
+  background-color: #D86F6F;
+}
+
+.btn-outline-info:active {
+  background-color: #D86F6F;
+}
+
+.dropdown-item {
+  color: #7B1612;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #D86F6F !important;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #D86F6F !important;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #D86F6F !important;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #D86F6F !important;
+}
+/* the block that includes all elements on the page*/
+
+form {
+  color: #D86F6F;
+}
+
+.m {
+  border-bottom: 0.09em solid #D86F6F;
+}
+
+.submit_req_btn {
+  border: 2.478px solid #D86F6F;
+}
+
+.submit_req_btn:hover {
+  background-color: #D86F6F;
+  color: #7B1612;
+}
+
+.select_input {
+  background-color: #7B1612;
+}
+
+#description_box {
+  background-color: #7B1612;
+  border: 1px solid #D86F6F;
+}
+
+#description_box2 {
+  background-color: #7B1612;
+  border: 1px solid #D86F6F;
+}
+
+.navbar {
+  background-color: #7B1612;
+}
+
+ul.nav a:hover {
+  color: #D86F6F !important;
+}
+
+.label {
+  color: #7B1612;
+  background-color: #D86F6F;
+}
+
+.cute_tile {
+  border: 1px solid #D86F6F;
+}
+
+#edit {
+  background-color: #7B1612;
+}
+
+#help-upload {
+  border-color: #D86F6F;
+}
+
+#example-upload {
+  color: #7B1612;
+  border-color: #D86F6F;
+}
+
+.create_req_btn {
+  border: 2.478px solid #D86F6F;
+}
+
+.create_req_btn:hover {
+  background-color: #D86F6F;
+  color: #7B1612;
+}
+
+.kings_link {
+  color: #D86F6F;
+}
+
+.upload-component {
+  background-color: #7B1612;
+  border-color: #D86F6F;
+}
+
+.browse-component {
+  background-color: #7B1612;
+  border-color: #D86F6F;
+}
+
+.color-option {
+  border-color: #D86F6F;
+}
+
+.departmentButton {
+  border: 1px solid #D86F6F;
+}
+
+#degree-block {
+  background-color: #66181C;
+  border: 1.5px solid #D86F6F;
+}
+
+.glyphicon-star {
+  color: #7B1612;
+}
+
+#title {
+  color: #D86F6F;
+}

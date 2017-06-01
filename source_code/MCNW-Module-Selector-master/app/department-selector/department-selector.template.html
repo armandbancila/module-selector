@@ -1,0 +1,13 @@
+<selection id="mainContainer">
+    <div id="headerDepartment">
+        <div class="underline" id="headerDepartmentTitle">King's College Faculties</div>
+        <!--        <p id="headerDepartmentDescription">Please, choose your path : </p>-->
+    </div>
+    <div id="departments">
+        <div class="col-xs-3 faculty" ng-repeat="department in $ctrl.facultys">
+            <a href="#!/index"><button class="departmentButton faculty-animations" ng-click="$ctrl.filter(department.Faculty)"> <p class="facultyButtonText">{{department.Faculty}} </p>
+            </button></a>
+        </div>
+    </div>
+
+</selection>

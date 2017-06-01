@@ -1,0 +1,35 @@
+<div class="row">
+   <div class="BAC title underline">Create Tag</div>
+</div>
+<center>
+   <span id="create-tags-span">
+      <form class="tag-form">
+         <div class="input-group m">
+            <span class="input-group-addon">
+            <i class="fa fa-tag"></i>
+            </span>
+            <input class="input" type="text" id="tag-name" placeholder="Create A Tag" />
+         </div>
+         <div class="input-group m">
+            <span class="input-group-addon">
+            <i class="fa fa-sitemap"></i>
+            </span>
+            <select id="select_category" class="input select_input">
+               <option value="" disabled selected id="category_label">Category</option>
+               <option>New Category</option>
+               <option ng-repeat="category in categories">{{category.Category}}</option>
+            </select>
+         </div>
+         <div class="input-group m" id="category">
+            <span class="input-group-addon">
+            <i class="fa fa-plus"></i>
+            </span>
+            <input class="input" type="text" id="new-category-name" placeholder="New Category Name" />
+         </div>
+         <center>
+            <button class="btn create_req_btn" id="create-tag-button" type="submit">Create Tag</button>
+         </center>
+         <div id="tag-message-alert"></div>
+      </form>
+   </span>
+</center>

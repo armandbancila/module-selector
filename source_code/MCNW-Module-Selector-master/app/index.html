@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="moduleSelector" ng-controller="SkinController">
+   <head>
+      <base href="/">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Module Selector</title>
+      <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+      <link rel="stylesheet" href="bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css" />
+      <link rel="stylesheet" href="app.css" />
+      <link rel="stylesheet" ng-href="{{ name }}.css" />
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+      <script src="bower_components/angular-route/angular-route.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="app.module.js"></script>
+      <script src="module-list/module-list.module.js"></script>
+      <script src="module-list/module-list.component.js"></script>
+      <script src="recommendations/recommendations.module.js"></script>
+      <script src="recommendations/recommendations.component.js"></script>
+      <script src="department-selector/department-selector.module.js"></script>
+      <script src="department-selector/department-selector.component.js"></script>
+      <script src="tracker/tracker.module.js"></script>
+      <script src="tracker/tracker.component.js"></script>
+      <script src="tracker/tracker.config.js"></script>
+      <script src="track-modules/track-modules.module.js"></script>
+      <script src="track-modules/track-modules.component.js"></script>
+      <script src="build-course/build-course.module.js"></script>
+      <script src="build-course/build-course.component.js"></script>
+      <script src="edit-tags/edit-tags.component.js"></script>
+      <script src="create-tags/create-tags.component.js"></script>
+      <script src="deactivate-account/deactivate-account.component.js"></script>
+      <script src="sign-in/sign-in.component.js"></script>
+      <script src="password-components/reset-password.component.js"></script>
+      <script src="password-components/forgot-password.component.js"></script>
+      <script src="account-form/account-form.component.js"></script>
+      <script src="account-form/edit-account-form.component.js"></script>
+      <script src="module-content/create-module.component.js"></script>
+      <script src="create-moderator/create-moderator.component.js"></script>
+      <script src="create-course/create-course.component.js"></script>
+      <script src="navbar/navbar.component.js"></script>
+      <script src="app.config.js"></script>
+      <script src="module-content/edit-module.component.js"></script>
+      <script src="edit-course/edit-course.module.js"></script>
+      <script src="edit-course/edit-course.component.js"></script>
+      <script src="add-module-to-course/add-module-to-course.component.js"></script>
+      <script src="bulk-upload/bulk-upload.component.js"></script>
+      <script src="feedback/feedback.component.js"></script>
+      <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+    
+   <body>
+      <div ng-view></div>
+      <span id="theme-changer"> <i id="cog-icon" class="glyphicon glyphicon-cog"></i>
+      <span id="options-container" style="display:none">
+      <button id="dark-blue-color" class="color-option resizableText">Navy</button>
+      <button id="baby-blue-color" class="color-option resizableText">Blue</button>
+      <button id="purple-color" class="color-option resizableText">Purple</button>
+      <button id="green-color" class="color-option resizableText">Green</button>
+      <button id="gray-color" class="color-option resizableText">Grey</button>
+      <button id="teal-color" class="color-option resizableText">Teal</button>
+      <button id="red-color" class="color-option resizableText">Maroon</button>
+      </span>
+      </span>
+   </body>
+</html>

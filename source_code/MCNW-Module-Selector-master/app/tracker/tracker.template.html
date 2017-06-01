@@ -1,0 +1,10 @@
+<div class="row contentWhite" id="placeholder">
+    <div>
+        <h1>{{$ctrl.greeting}}</h1>
+    </div>
+</div>
+<div id="select" class="row">
+    <span id="trackContainer" class="selecting underline"><a ng-href="#!/tracked"><button class="tOrB" ng-click="$ctrl.selected('track')">My Tracked Modules</button></a></span>
+    <span class="seperator"></span>
+    <span id="buildContainer" class="selecting"><a ng-href="#!/buildme"><button class="tOrB" ng-click="$ctrl.selected('build')">Build A Course</button></a></span>
+</div>

@@ -1,0 +1,158 @@
+<section id="mainContainer">
+    <div id="mainMenu" class="container">
+    </div>
+    <div class="row">
+        <div id="filters" class="col-xs-3 offcanvas-xs" data-disable-scrolling="false">
+            <div id="emptyRow" class="row"></div>
+            <div id="degree" class="tagFilter">
+                <div class="row contentWhite underline">
+                    Filter By Tags
+                </div>
+                <div id="firstTags" class="row filterStyle filterOptionsTags">
+                    <button class="otherLink contentWhite" id="All" ng-click="$ctrl.pressedTag('All')">All Tags</button>
+                    <span class="categoryTitle">{{$ctrl.tagCategories[0]}}</span>
+                    <button ng-repeat="tag in $ctrl.categoryToTag.get($ctrl.tagCategories[0])" class="link" ng-attr-id="{{tag}}" ng-click="$ctrl.pressedTag(tag)" on-finish-render="ngRepeatFinished"> <p class="resizableText">{{tag}} </p></button>
+                </div>
+                <div id="lessFilter" class="filterStyle filterOptionsTags">
+                    <button class="otherLink" ng-click="$ctrl.showMore()">+ Show More</button>
+                </div>
+                <div id="moreFilter" class="row filterStyle filterOptionsTags">
+                    <div ng-repeat="category in $ctrl.tagCategories.slice(1, $ctrl.tagCategories.length)" on-finish-render="ngRepeatFinished">
+                        <span class="categoryTitle">{{category == null ? 'Other' : category}}</span>
+                        <button ng-repeat="tag in $ctrl.categoryToTag.get(category)" class="link" ng-attr-id="{{tag}}" ng-click="$ctrl.pressedTag(tag)"><p class="resizableText">{{tag}}</p></button>
+                    </div>
+                    <button class="otherLink" ng-click="$ctrl.showLess()">- Show Less</button>
+                </div>
+            </div>
+            <div id="level" class="tagFilter">
+                <div class="row contentWhiteSub underline">
+                    Filter By Level
+                </div>
+                <div class="row filterStyle filterOptions">
+                    <div class="radio">
+                        <label>
+                            <input id="levelAll" type="radio" ng-model="$ctrl.query1.Year" value="" ng-checked="true" ng-change="$ctrl.filterYear('0')" name="optYearRadio">All</label>
+                    </div>
+                    <div class="radio">
+                        <label ng-hide="$ctrl.year4">
+                            <input id="level4" type="radio" ng-model="$ctrl.query1.Year" value="4" ng-change="$ctrl.filterYear('4')" name="optYearRadio">Level 4</label>
+                    </div>
+                    <div class="radio">
+                        <label ng-hide="$ctrl.year5">
+                            <input id="level5" type="radio" ng-model="$ctrl.query1.Year" value="5" ng-change="$ctrl.filterYear('5')" name="optYearRadio">Level 5</label>
+                    </div>
+                    <div class="radio">
+                        <label ng-hide="$ctrl.year6">
+                            <input id="level6" type="radio" ng-model="$ctrl.query1.Year" value="6" ng-change="$ctrl.filterYear('6')" name="optYearRadio">Level 6</label>
+                    </div>
+                    <div class="radio">
+                        <label ng-hide="$ctrl.year7">
+                            <input id="level7" type="radio" ng-model="$ctrl.query1.Year" value="7" ng-change="$ctrl.filterYear('7')" name="optYearRadio">Level 7</label>
+                    </div>
+                    <div class="radio">
+                        <label ng-hide="$ctrl.year8">
+                            <input id="level8" type="radio" ng-model="$ctrl.query1.Year" value="8" ng-change="$ctrl.filterYear('8')" name="optYearRadio">Level 8</label>
+                    </div>
+                </div>
+            </div>
+            <div id="credits" class="tagFilter">
+                <div class="row contentWhiteSub underline">
+                    Filter By Credits
+                </div>
+                <div class="row filterStyle filterOptions">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" value="All" ng-checked="true" ng-model="$ctrl.query3.Credits" ng-change="$ctrl.filterCredit('-1')" name="optCred">All</label>
+                    </div>
+                    <div class="radio" ng-repeat="credit in $ctrl.allCredits">
+                        <label>
+                            <input type="radio" value="{{credit}}" ng-model="$ctrl.query3.Credits" ng-change="$ctrl.filterCredit({{credit}})" name="optCred">{{credit}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+				
+				<i id="slide" ng-click="$ctrl.remove(course.buildID)" data-toggle="offcanvas"  data-target="#filters" ng-if="$ctrl.filtersHidden" class="glyphicon glyphicon-filter"></i>
+        <div ng-class="{'col-xs-7': $ctrl.filtersHidden != true, 'col-xs-10 col-xs-offset-1': $ctrl.filtersHidden == true}" class=" moduledata1">
+            <div class="row content" id="wrapper">
+                <div id="searchBar" class="input-group">
+                    <span class="input-group-btn">
+               <button id="searchButton" class="btn btn-default glyphicon glyphicon-search inSearch" type="button" ng-click="$ctrl.filterSearchButton()"></button>
+               </span>
+                    <input id="searchModule" type="text" class="form-control inSearch resizableTitle" placeholder="Search For A Module" ng-model="$ctrl.queryName" ng-keypress="$ctrl.filterSearch($event)">
+                    <!-- /btn-group -->
+                </div>
+                <!-- /input-group -->
+            </div>
+            <div id="searchResults" class="row contentWhite underline">
+                <div class="col-xs-8 optionPerPage">
+                    <span ng-if="$ctrl.facultyQuery != ''" id="lblSearch">Search Results In The {{$ctrl.myFaculty}} Faculty</span>
+                    <span ng-if="$ctrl.facultyQuery == ''" id="lblSearch">Search Results For All Faculties</span>
+
+                </div>
+                <div class="col-xs-4 optionPerPage">
+                    <div id="perPage">
+                        <span class="contentWhite">Results Per Page:</span>
+                        <select class="inSearch" id="dropdownMenuPager" ng-model="$ctrl.perPage" ng-change="$ctrl.change()">
+                            <option ng-selected="true" value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="modules">
+                <div class="noResults" ng-if="$ctrl.emptyModules">No Results Found</div>
+                <div class="row moduleRow module-box-animations" ng-click="open(module.ModuleID, module.Name, module.Description, module.CourseworkPercentage, module.Credits)" ng-repeat="module in $ctrl.modules">
+                    <div class="col-xs-10 moduleMain">
+                        <div class="row moduleHeader">
+                            <div class="col-xs-9 moduleTitle">{{module.ModuleID}}</div>
+                            <div class="col-xs-3"><span ng-if="$ctrl.isNotTracked(module.ModuleID)" ng-click="$ctrl.tracked(module.ModuleID); $event.stopPropagation()" ng-attr-class="{{module.ModuleID + 'tracked'}} glyphicon glyphicon-pushpin white" ng-attr-id="{{module.ModuleID + 'tracked'}}"></span><span ng-if="$ctrl.isTracked(module.ModuleID)" ng-click="$ctrl.tracked(module.ModuleID); $event.stopPropagation()" ng-attr-class="{{module.ModuleID + 'tracked'}} glyphicon glyphicon-pushpin red"></span></div>
+                        </div>
+                        <div class="row moduleSub">
+                           {{module.Name}} 
+                        </div>
+                        <div class="row moduleDesc">
+                            {{module.Description.length > 215 ? module.Description.substring(0,212) + '...' : module.Description}}
+                        </div>
+                    </div>
+                    <div class="row col-xs-2 sidePanel">
+                        <div class="sideBar">
+                           <p class="resizableText"> {{module.Credits + ' Credits'}} </p>
+                        </div>
+                        <div class="sideBar">
+                            <p class="resizableText"> {{100-module.CourseworkPercentage > 0 ? 100-module.CourseworkPercentage + '% Exam': ''}} </p>
+                        </div>
+                        <div class="sideBar">
+                             <p class="resizableText breakWord"> {{module.CourseworkPercentage > 0 ? module.CourseworkPercentage + '% Coursework': ''}} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav aria-label="...">
+                <ul class="pager">
+                    <li>
+                        <button type="button" class="btn btn-outline-info resizableText" ng-click="$ctrl.prev()" ng-disabled="$ctrl.prevDisabled">Prev</button>
+                    </li>
+                    <li class="contentWhite" id="pager">{{$ctrl.currentPage}}</li>
+                    <li>
+                        <button type="button" class="btn btn-outline-info resizableText" ng-click="$ctrl.next()" ng-disabled="$ctrl.nextDisabled">Next</button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="row">
+                <recommendations></recommendations>
+            </div>
+
+            <div class="row contentWhite">
+                <div class="col-xs-12" id="backToFaculty">
+                    <a href="#!/select-faculty">
+                        <button class="backLink"><span class="glyphicon glyphicon-triangle-left"></span>Back To Faculty Selection</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="recommendations" class="contentWhite">
+        </div>
+    </div>
+</section>

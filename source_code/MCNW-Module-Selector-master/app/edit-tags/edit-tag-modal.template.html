@@ -1,0 +1,38 @@
+<div style="height:470px !important;" class="modal-content" id="edit">
+   <i class="glyphicon glyphicon-remove" id="windowCloseButtons" ng-click="close()"></i>
+   <div class="modal-header">
+      <center>
+         <h4 class="h4">Edit Tag</h4>
+      </center>
+   </div>
+   <div id="create-tags-span" class="modal-body modal-space">
+      <center>
+         <form class="edit-module-form">
+            <div class="input-group m"> <span class="input-group-addon">
+               <i class="glyphicon glyphicon-tag fa fa-tag"></i>
+               </span>
+               <input id="tag_name" class="input" disabled="disabled" type="text" placeholder="Tag Name" value="{{tagname}}" ng-mousedown="mouseDown()" /> 
+            </div>
+            <div class="input-group m">
+               <span class="input-group-addon">
+               <i class="fa fa-sitemap"></i>
+               </span>
+               <select id="tag_category" ng-model="tester" ng-change="test()" class="input select_input">
+                  <option value="" disabled selected id="category_label">{{tagcategory}}</option>
+                  <option value="new">New Category</option>
+                  <option ng-repeat="category in categories">{{category.Category}}</option>
+               </select>
+            </div>
+            <div class="input-group m" id="category"> <span class="input-group-addon">
+               <i class="fa fa-plus"></i>
+               </span>
+               <input class="input" type="text" id="new-category-name" placeholder="New Category Name" /> 
+            </div>
+            <center>
+               <button ng-click="updateTag()" class="btn submit_req_btn" id="edit_module_btn" type="submit">Update Tag</button>
+            </center>
+            <div id="tag-message-alert"></div>
+         </form>
+      </center>
+   </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="row"><div class="BAC title underline">Edit Course</div></div>
+</br>
+<div>
+   <center>
+      <div id="searchBar2" class="input-group">
+         <span class="input-group-btn">
+         <button class="btn btn-default glyphicon glyphicon-search inSearch" type="button"></button>
+         </span>
+         <input type="text" class="form-control inSearch" placeholder="Search For A Course" ng-model="$ctrl.query.Name">
+      </div>
+      <div class="tag-search-view normal-text">
+         <div class="row" style="width: 100%;">
+            <div class="normal-text" ng-repeat="degree in degrees | filter:$ctrl.query.Name:DegreeTitle | limitTo: paginationLimit() " after-ng-repeat ng-click="open(degree.DegreeTitle, degree.LengthOfStudy)">
+               <span class="col-xs-5 module-style-tag">
+               <span class="resizableText">{{degree.DegreeTitle}}</span>
+               <i ng-click="$ctrl.removeDegree($event); $event.stopPropagation()" class="glyphicon glyphicon-trash trashAddPadding resizableText"></i>
+               </span>
+               <span class="col-xs-1 resizableText"></span>
+            </div>
+         </div>
+          <button class="btn-show-more" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">Show More Courses</button>
+      </div>
+   </center>
+</div>

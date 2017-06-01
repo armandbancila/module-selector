@@ -1,0 +1,24 @@
+<div class="row"><div class="BAC title underline">Edit Tag</div></div>
+</br>
+<div>
+   <center>
+      <div id="searchBar2" class="input-group">
+         <span class="input-group-btn">
+         <button class="btn btn-default glyphicon glyphicon-search inSearch" type="button"></button>
+         </span>
+         <input type="text" class="form-control inSearch" placeholder="Search For A Tag" ng-model="$ctrl.query.Name">
+      </div>
+      <div id="tag-view" class="tag-search-view normal-text">
+         <div class="row" style="width: 100%;">
+            <div class="normal-text" ng-click="open(tag.TagName,tag.Category)" ng-repeat="tag in tags | filter:$ctrl.query.Name:TagName | limitTo: paginationLimit() " after-ng-repeat>
+               <span id="tilePadding" class="col-xs-5 module-style-tag" >
+               <span class="resizableText">{{tag.TagName}}</span>
+               <i ng-click="$ctrl.removeTag($event); $event.stopPropagation()" class="glyphicon glyphicon-trash trashAddPadding resizableText"></i>
+               </span>
+               <span class="col-xs-1 resizableText"></span>
+            </div>
+         </div>
+          <button class="btn-show-more" ng-show="hasMoreItemsToShow()" ng-click="showMoreItems()">Show More Tags</button>
+      </div>
+   </center>
+</div>

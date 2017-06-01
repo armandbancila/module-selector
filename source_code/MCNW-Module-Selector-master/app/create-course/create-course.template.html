@@ -1,0 +1,39 @@
+<div class="row">
+   <div class="BAC title underline">Create Course</div>
+</div>
+<center>
+   <span id="create-course-span">
+      <form id="create-course-form">
+         <div class="input-group m"> <span class="input-group-addon">
+            <i class="fa fa-user"></i>
+            </span>
+            <input id="course_name" class="input" type="text" placeholder="Course Name" /> 
+         </div>
+         <div class="input-group m">
+            <span class="input-group-addon">
+            <i class="fa fa-calendar"></i>
+            </span>
+            <select id="select_year" class="input select_input">
+               <option value="" disabled selected id="year_label">Length of Study</option>
+               <option ng-repeat="n in [1, 2, 3, 4, 5, 6]">{{n}}</option>
+            </select>
+         </div>
+         <div class="input-group m">
+            <span class="input-group-addon">
+            <i class="fa fa-plus" ></i>
+            </span>
+            <select id="selector" ng-model="dropdownModule" ng-change="moveModules()" class="input select_input">
+               <option value="" id="course_label">Add Modules To Course</option>
+               <option ng-repeat="module in modules"> {{module.ModuleID}} </option>
+            </select>
+         </div>
+         <div id="module_bed" class="module-bed"> 
+            <span style="margin:5px 5px 5px 5px;" ng-click="open($event)" ng-repeat="module in selectedModules" class="module-style-tag">{{module.ID}}<i ng-click="deselectModule($event); $event.stopPropagation()" class="glyphicon glyphicon-remove"></i></span>
+         </div>
+         <center>
+            <button class="btn submit_req_btn" id="create_course_btn" type="submit">Create Course</button>
+         </center>
+         <span id="cc-message-alert"></span>
+      </form>
+   </span>
+</center>

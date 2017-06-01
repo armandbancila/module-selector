@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="title underline">My Tracked Modules</div>
+</div>
+<div id="tContainer">
+    <div class="row">
+        <div id="tfilters" class="col-xs-3 tFiltering offcanvas-xs" data-disable-scrolling="false" data-placement="left">
+            <div class="row contentWhite underline tracking" style="padding-top:34px">
+                Filter Tracked Modules By
+            </div>
+            <div id="firstTags" class="row filterStyle filterOptionsTags">
+                <button class="otherLink contentWhite" id="All" ng-click="$ctrl.pressedTag('All')">All Tags</button>
+                <div ng-repeat="category in $ctrl.tTagCategories" on-finish-render="ngRepeatFinished">
+                    <span class="categoryTitle">{{category == null ? 'Other' : category}}</span>
+                    <button ng-repeat="tag in $ctrl.tCategoryToTag.get(category)" class="link" ng-attr-id="{{tag}}" ng-click="$ctrl.pressedTag(tag)"><p class="resizableText">{{tag}} </p></button>
+                </div>
+            </div>
+        </div>
+				<i id="slide" data-toggle="offcanvas"  data-target="#tfilters" ng-if="$ctrl.filtersHidden" class="glyphicon glyphicon-filter"></i>
+        <div ng-class="{'col-xs-9': $ctrl.filtersHidden != true, 'col-xs-10 col-xs-offset-1': $ctrl.filtersHidden == true}" class="trackContainer">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="tSearchBar" class="input-group underline">
+                        <span class="input-group-btn">
+                  <button class="btn btn-default glyphicon glyphicon-search inSearch" type="button"></button>
+                  </span>
+                        <input type="text" class="form-control inSearch tracking resizableTitle" placeholder="Search Tracked Modules" ng-model="$ctrl.query.Name">
+                    </div>
+                </div>
+            </div>
+
+            <div class="tracked module-box-animations" ng-repeat="module in $ctrl.tModules | filter:$ctrl.query as results" ng-click="open(module.ModuleID, module.Name, module.Description, module.CourseworkPercentage, module.Credits)">
+
+                <div class="col-xs-9 moduleMain ht">
+
+                    <div class="row moduleHeader">
+
+                        <div class="col-xs-9 moduleTitle"><p class="resizableTitle">{{module.ModuleID}} </p></div>
+                        <div class="col-xs-3"><span ng-attr-class="{{module.ModuleID + 'tracked'}} glyphicon glyphicon-pushpin red" ng-click="$ctrl.tracked(module.ModuleID); $event.stopPropagation()"></span></div>
+
+                    </div>
+
+                    <div class="row moduleSub">
+
+                        <p class="resizableName">{{module.Name}} </p>
+
+                    </div>
+
+                    <div class="row moduleDesc">
+
+                        {{module.Description.length > 215 ? module.Description.substring(0,212) + '...' : module.Description}}
+
+                    </div>
+
+                </div>
+
+                <div class="row col-xs-3 sidePanel">
+
+                    <div class="sideBar">
+
+                        <p class="resizableText2"> {{module.Credits + ' Credits'}} </p>
+
+                    </div>
+
+                    <div class="sideBar">
+
+                        <p class="resizableText2"> {{100-module.CourseworkPercentage > 0 ? 100-module.CourseworkPercentage + '% Exam': ''}} </p>
+
+                    </div>
+
+                    <div class="sideBar">
+
+                        <p class="resizableText2"> {{module.CourseworkPercentage > 0 ? module.CourseworkPercentage+ '% Coursework' : ''}} </p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-xs-12 noResults" ng-if="results.length === 0">
+                <p>No Results Found</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="modal-content view"><i class="glyphicon glyphicon-remove" id="windowCloseButtons" ng-click="close()"></i>
+    <div class="modal-header">
+        <h3 class="modal-title">{{code}} - {{name}} <i ng-if="isNotTracked(code)" ng-click="tracked(code)" ng-attr-class="{{code + 'tracked'}} glyphicon glyphicon-pushpin white"></i><i ng-if="isTracked(code)" ng-click="tracked(code)" ng-attr-class="{{code + 'tracked'}} glyphicon glyphicon-pushpin red"></i></h3>
+        <h5 class="details">{{exam}}% Exam | {{cw}}% Coursework |{{credits}} Credits</h5></div>
+    <div class="modal-body">
+        <p class="scroll" id="modal_descr_text"> {{description}} </p>
+    </div>
+    <h5 class="kings_link"> For More Information Please Visit The Link Below: <a href="http://www.kcl.ac.uk/schools/index-new.aspx" class="url_link" target="_blank">http://www.kcl.ac.uk/schools/index-new.aspx<a/></h5></div>

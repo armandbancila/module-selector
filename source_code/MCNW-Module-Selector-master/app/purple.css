@@ -1,0 +1,257 @@
+body {
+  background-color: #a18da8;
+}
+
+.module-box-animations:hover {
+  background-color: #835684;
+}
+
+.faculty-animations:hover {
+  background-color: #835684;
+}
+
+.navbar .navbar-nav > li.open > a {
+  background-color: #462446;
+}
+
+.module-style-tag {
+  border-color: #462446;
+}
+
+.module-style-tag:hover {
+  background-color: #835684;
+}
+
+#modal_descr_text {
+  background-color: #a18da8;
+}
+
+.affix#searchBar {
+  background-color: #a18da8;
+}
+
+.seperator {
+  border-right-color: #462446;
+}
+
+.view {
+  background-color: #a18da8;
+}
+
+.details {
+  color: #462446;
+}
+
+.content {
+  color: #462446;
+}
+
+.underline {
+  border-bottom-color: #462446;
+}
+
+.filterStyle {
+  color: #462446;
+}
+
+#searchBar {
+  border-bottom-color: #462446;
+}
+
+#searchBar2 {
+  border-bottom-color: #462446;
+}
+
+.inSearch,
+.inSearch:hover,
+.inSearch:focus,
+.inSearch:active,
+.inSearch:active:focus {
+  background-color: transparent;
+}
+
+.btn-show-more {
+  color: #462446;
+}
+
+.dropStyle {
+  background-color: #462446;
+}
+
+.moduleRow {
+  border: 1px solid #462446;
+}
+
+.moduleMain {
+  border-right: 1px dashed #462446;
+}
+
+.row.moduleDesc {
+  color: #462446;
+}
+
+.sideBarRecommended {
+  color: #462446;
+}
+
+.moduleBox {
+  border: 1px solid #462446;
+}
+
+.tracked {
+  border: 1px solid #462446;
+}
+
+.glyphicon.glyphicon-pushpin:hover {
+  color: #462446;
+}
+
+.moduleBox.right {
+  border: 1px solid #462446;
+}
+
+.moduleBox.left {
+  border: 1px solid #462446;
+}
+
+.btn-outline-info {
+  border-color: #462446;
+}
+
+.btn-outline-info:hover {
+  background-color: #462446;
+}
+
+.btn-outline-info:active {
+  background-color: #462446;
+}
+
+.dropdown-item {
+  color: #a18da8;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #462446 !important;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #462446 !important;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #462446 !important;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #462446 !important;
+}
+/* the block that includes all elements on the page*/
+
+form {
+  color: #462446;
+}
+
+.m {
+  border-bottom: 0.09em solid #462446;
+}
+
+.submit_req_btn {
+  border: 2.478px solid #462446;
+}
+
+.submit_req_btn:hover {
+  background-color: #462446;
+  color: #a18da8;
+}
+
+.select_input {
+  background-color: #a18da8;
+}
+
+#description_box {
+  background-color: #a18da8;
+  border: 1px solid #462446;
+}
+
+#description_box2 {
+  background-color: #a18da8;
+  border: 1px solid #462446;
+}
+
+.navbar {
+  background-color: #a18da8;
+}
+
+ul.nav a:hover {
+  color: #462446 !important;
+}
+
+.label {
+  color: #a18da8;
+  background-color: #462446;
+}
+
+.cute_tile {
+  border: 1px solid #462446;
+}
+
+#edit {
+  background-color: #a18da8;
+}
+
+#help-upload {
+  border-color: #462446;
+}
+
+#example-upload {
+  color: #a18da8;
+  border-color: #462446;
+}
+
+.create_req_btn {
+  border: 2.478px solid #462446;
+}
+
+.create_req_btn:hover {
+  background-color: #462446;
+  color: #a18da8;
+}
+
+.kings_link {
+  color: #462446;
+}
+
+.upload-component {
+  background-color: #a18da8;
+  border-color: #462446;
+}
+
+.browse-component {
+  background-color: #a18da8;
+  border-color: #462446;
+}
+
+.color-option {
+  border-color: #462446;
+}
+
+.departmentButton {
+  border: 1px solid #462446;
+}
+
+#degree-block {
+  background-color: #835684;
+  border: 1.5px solid #462446;
+}
+
+.glyphicon-star {
+  color: #a18da8;
+}
+
+#title {
+  color: #462446;
+}

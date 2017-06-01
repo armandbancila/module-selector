@@ -1,0 +1,98 @@
+<div class="row"><div class="BAC title underline">Create Module</div></div>
+<br/><br/>
+<span id="module-content-span">
+<center>
+    <form class="create-module-form">
+        <div class="input-group m">
+            <span class="input-group-addon">
+                <i class="fa fa-qrcode"></i>
+            </span>
+            <input id="module_code" class="input" type="text" placeholder="Module Code" />
+        </div>
+        <div class="input-group m">
+            <span class="input-group-addon">
+                <i class="fa fa-user"></i>
+            </span>
+            <input id="module_name" class="input" type="text" placeholder="Module Name" />
+        </div>
+        <div>
+            <div class="input-group-txtbox">
+                <span class="input-group-addon-txtbox">
+                    <i class="fa fa-pencil" ></i>
+                </span>
+                <label id="desc_label">Description</label>
+            </div>
+            <textarea id="description_box"></textarea>
+        </div>
+        <div class="input-group m">
+            <span class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+            </span>
+           <select id="select_year" class="input select_input">
+                <option value="" disabled selected id="year_label">Level</option>
+                <option ng-repeat="n in [4, 5, 6, 7, 8]"> {{n}}</option>
+            </select>
+        </div>
+        <div class="input-group m">
+            <span class="input-group-addon">
+                <i class="fa fa-graduation-cap" ></i>
+            </span>
+            <select id="select_credits" class="input select_input">
+                <option value="" disabled selected id="credit_label">Credits</option>
+                <option ng-repeat="credit in [15,30]"> {{credit}}</option>
+            </select>
+        </div>
+        <div class="input-group m">
+            <span class="input-group-addon">
+                <i class="fa fa-sun-o" ></i>
+            </span>
+            <select id="select_day" class="input select_input">
+                <option value="" disabled selected id="day_label">Day of Lecture</option>
+                <option ng-repeat="day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']"> {{day}}</option>
+            </select>
+        </div>
+        <div class="input-group m">
+            <span class="input-group-addon">
+                <i class="fa fa-clock-o"></i>
+            </span>
+            <input id="time_input" class="input" type="text" placeholder="Lecture Time (HH:MM:SS)" pattern="d{2}\:d{2}\:d{2}" />
+        </div>
+        <div class="input-group m">
+            <span class="input-group-addon">
+                <i class="fa fa-file-text-o"></i>
+            </span>
+            <input id="cw_perc_input" class="input" type="text" maxlength="3" pattern="[0-9]{1}|[0-9]{2}|100" placeholder="Coursework Percentage" />
+        </div>
+        <div class="input-group m">
+            <span class="input-group-addon">
+                <i class="fa fa-sitemap"></i>
+            </span>
+            <select id="select_faculty" class="input select_input">
+                <option value="" disabled selected id="faculty_label">Faculty</option>
+                <option>Faculty of Arts and Humanities</option>
+                <option>Dental Institute</option>
+                <option>Faculty of Life Sciences and Medicine</option>
+                <option>Institute of Psychiatry, Psychology and Neuroscience</option>
+                <option>The Dickson Poon School of Law</option>
+                <option>Faculty of Natural and Mathematical Sciences</option>
+                <option>Florence Nightingale Faculty of Nursing and Midwifery</option>
+                <option>Faculty of Social Science and Public Policy</option>
+            </select>
+        </div>
+            <div class="input-group m">
+            <span class="input-group-addon">
+                <i class="fa fa-tag" ></i>
+            </span>
+            <select id="selector" ng-model="selectedItem" ng-change="moveTags()" class="input select_input">
+                <option value="" id="day_label">Add Tags To Module</option>
+                <option ng-repeat="tag in tags"> {{tag.TagName}} </option>
+            </select>
+        </div>
+        <p id="tag_bed"></p>
+        <center>
+            <button class="btn submit_req_btn" id="create_module_btn" type="submit"></button>
+        </center>
+        <span id="alert_place"></span>
+    </form>
+</center>
+<span/>
